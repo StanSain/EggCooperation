@@ -10,7 +10,7 @@ Nota: Para resolver el ejercicio deberá investigar cómo se utilizan las
 siguientes funciones de Java substring(), Length() y Math.random().
  */
 package eggcooperation;
-import java.util.
+
 import java.util.Scanner;
 
 public class sopaDeLetras {
@@ -21,11 +21,14 @@ public class sopaDeLetras {
         String palabra = "";
         for (int i = 0; i <= 4; i++) {
             Valido();//lee palabra y valida su largo entre 3 yy 5
-LLeno(String[][]sopa,String palabra);
+            DesPal(palabra);//---deletrea palabra devuelve letra[5]
+            LLeno(sopa, letra);
+            
+
         }
     }
-    //-----------------
 
+    //-----------------
     public static String Valido() {
         Scanner leer = new Scanner(System.in);
         String palabra = "";
@@ -47,20 +50,21 @@ LLeno(String[][]sopa,String palabra);
             }
         }
     }
+    //------------LLena la matriz sopa con las palabras deletreadas---------------------
+    public static void LLeno(String[][] sopa, String[]letra) {
 
-    //---------------------------------
-   public static void LLeno(String[][]sopa,String palabra){
-       String letra="";
-       int largo = palabra.length();
-       for (int i = 0; i <= (largo-1); i++){
-           letra = palabra.substring(i, i+1);
-       }
-   }
-    
+    }
 
-    
-    
-    
-    
-    //-----------------------
+    //-----------------------deletrea palabra devuelve letra 
+    public static String[] DesPal(String palabra) {
+        String[] letra = new String[5];
+        for (int i = 0; i <= 4; i++) {
+            letra[i] = palabra.substring(i, i + 1);
+
+        }
+        return letra;
+    }
+    //---------------------------
+
+    //---------------------
 }
